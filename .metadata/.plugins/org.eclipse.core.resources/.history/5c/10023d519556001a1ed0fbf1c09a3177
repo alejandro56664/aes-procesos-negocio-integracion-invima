@@ -1,0 +1,43 @@
+package co.com.invima.procesos.registro.alimentos;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ws.server.endpoint.annotation.Endpoint;
+import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
+import org.springframework.ws.server.endpoint.annotation.RequestPayload;
+import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+
+import io.spring.guides.gs_producing_web_service.BuscarEstablecimientoByNITRequest;
+import io.spring.guides.gs_producing_web_service.BuscarEstablecimientoByNITResponse;
+
+
+@Endpoint
+public class InvimaEndpoint {
+	private static final String NAMESPACE_URI = "http://invima.com.co/procesos/registro/alimentos-web-service";
+
+	private EstablecimientoRepository establecimientoRepository;
+
+	@Autowired
+	public InvimaEndpoint(EstablecimientoRepository establecimientoRepository) {
+		this.establecimientoRepository = establecimientoRepository;
+	}
+
+	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "buscarEstablecimientoByNIT")
+	@ResponsePayload
+	public BuscarEstablecimientoByNITResponse getCountry(@RequestPayload BuscarEstablecimientoByNITRequest request) {
+		BuscarEstablecimientoByNITResponse response = new BuscarEstablecimientoByNITResponse();
+		
+		response.setEstablecimiento(establecimientoRepository.findEstablecimiento(request.getNIT()));
+
+		return response;
+	}
+	
+	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "calcularTarifaTramite")
+	@ResponsePayload
+	public calcularTarifaTramiteResponse calcularTarifaTramite(@RequestPayload calcularTarifaTramiteRequest request) {
+		BuscarEstablecimientoByNITResponse response = new BuscarEstablecimientoByNITResponse();
+		
+		response.setEstablecimiento(establecimientoRepository.findEstablecimiento(request.getNIT()));
+
+		return response;
+	}
+}

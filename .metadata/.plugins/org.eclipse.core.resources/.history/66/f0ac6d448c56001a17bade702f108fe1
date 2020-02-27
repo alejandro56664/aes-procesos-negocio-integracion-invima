@@ -1,0 +1,116 @@
+//
+// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
+// Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+// Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+// Generado el: 2020.02.23 a las 05:25:14 PM COT 
+//
+
+
+package io.spring.guides.gs_producing_web_service;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Clase Java para establecimiento complex type.
+ * 
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * 
+ * <pre>
+ * &lt;complexType name="establecimiento">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="NIT" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="razonSocial" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="capital" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "establecimiento", propOrder = {
+    "nit",
+    "razonSocial",
+    "capital"
+})
+public class Establecimiento {
+
+    @XmlElement(name = "NIT", required = true)
+    protected String nit;
+    protected int razonSocial;
+    @XmlElement(required = true)
+    protected String capital;
+
+    /**
+     * Obtiene el valor de la propiedad nit.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getNIT() {
+        return nit;
+    }
+
+    /**
+     * Define el valor de la propiedad nit.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setNIT(String value) {
+        this.nit = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad razonSocial.
+     * 
+     */
+    public int getRazonSocial() {
+        return razonSocial;
+    }
+
+    /**
+     * Define el valor de la propiedad razonSocial.
+     * 
+     */
+    public void setRazonSocial(int value) {
+        this.razonSocial = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad capital.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCapital() {
+        return capital;
+    }
+
+    /**
+     * Define el valor de la propiedad capital.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCapital(String value) {
+        this.capital = value;
+    }
+
+}

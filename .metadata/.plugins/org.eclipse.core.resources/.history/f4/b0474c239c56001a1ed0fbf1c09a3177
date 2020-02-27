@@ -1,0 +1,33 @@
+package co.com.invima.procesos.registro.alimentos;
+
+import org.springframework.stereotype.Service;
+
+import co.com.invima.procesos.registro.alimentos_web_service.TipoRevision;
+import java.util.Random;
+
+
+
+@Service
+public class IntegracionesService {
+	
+
+	public TipoRevision getTipoRevision() {
+		return TipoRevision.NSA;
+	}
+
+	public String generarNumeroRadicado() {
+		return generarNumeroAleatorio();
+	}
+
+	public String generarNumeroExpediente() {
+		return generarNumeroAleatorio();
+	}
+	
+	private String generarNumeroAleatorio() {
+		Random rand = new Random();
+		Long num = rand.nextLong();
+		
+		return num.toString();
+	}
+
+}

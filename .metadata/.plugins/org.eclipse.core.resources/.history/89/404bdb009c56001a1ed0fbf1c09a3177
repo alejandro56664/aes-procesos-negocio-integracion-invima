@@ -1,0 +1,97 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://invima.com.co/procesos/registro/alimentos-web-service"
+           targetNamespace="http://invima.com.co/procesos/registro/alimentos-web-service" elementFormDefault="qualified">
+
+    <xs:element name="buscarEstablecimientoByNITRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="NIT" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="buscarEstablecimientoByNITResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="establecimiento" type="tns:establecimiento"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="calcularTarifaTramiteRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="param1" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="calcularTarifaTramiteResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tarifa" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="determinarTipoRevisionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="param1" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="determinarTipoRevisionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tipoRevision" type="tns:tipoRevision"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="generarNumeroRadicadoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="param1" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="generarNumeroRadicadoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="numRadicado" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="generarNumeroExpedienteRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="param1" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="generarNumeroExpedienteResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="numExpediente" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="establecimiento">
+        <xs:sequence>
+            <xs:element name="NIT" type="xs:string"/>
+            <xs:element name="razonSocial" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="tipoRevision">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NSA"/>
+            <xs:enumeration value="RSA"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

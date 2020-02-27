@@ -1,0 +1,44 @@
+#Proyecto de Integraciones
+
+
+Metódos:
+
+1. Buscar establecimiento en registro INVIMA
+
+	nombre: buscarEstablecimiento
+	params: 
+		NIT: String
+
+	response:
+	existe/no existe
+
+
+2. Calcular tarifa tramite
+
+	nombre: calcularTarifaTramite
+	params:
+	respuesta:
+		tarifa: Número
+
+3. Determinar tipo de revisión
+
+	nombre: determinarTipoRevision
+	params:
+	respuesta:
+		tipoRevision: String
+
+4. Generar número de radicado
+
+	nombre: generarNumeroRadicado
+	params:
+	respuesta:
+		numRadicado: Número
+		
+4. Generar número de expediente
+
+	nombre: generarNumeroExpediente
+	params:
+	respuesta:
+		numExpediente: Número
+
+ 

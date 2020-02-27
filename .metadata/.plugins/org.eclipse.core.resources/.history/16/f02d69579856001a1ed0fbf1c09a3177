@@ -1,0 +1,15 @@
+package co.com.invima.procesos.registro.alimentos;
+
+import org.springframework.stereotype.Service;
+
+import io.spring.guides.gs_producing_web_service.TipoRevision;
+
+@Service
+public class IntegracionesService {
+
+	public TipoRevision getTipoRevision() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,8 @@
+package co.com.invima.procesos.registro.alimentos;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class IntegracionesService {
+
+}

@@ -1,0 +1,31 @@
+package co.com.invima.procesos.registro.alimentos;
+
+import org.springframework.stereotype.Service;
+
+import io.spring.guides.gs_producing_web_service.TipoRevision;
+import java.util.Random;
+
+
+
+@Service
+public class IntegracionesService {
+
+	public TipoRevision getTipoRevision() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String generarNumeroRadicado() {
+		Random rand = new Random();
+		
+		rand.nextLong();
+		
+		return null;
+	}
+
+	public String generarNumeroExpediente() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

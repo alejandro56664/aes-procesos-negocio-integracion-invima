@@ -1,0 +1,47 @@
+package co.com.invima.procesos.registro.alimentos;
+
+import javax.annotation.PostConstruct;
+import java.util.HashMap;
+import java.util.Map;
+
+import io.spring.guides.gs_producing_web_service.Establecimiento;
+import io.spring.guides.gs_producing_web_service.Currency;
+import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
+
+@Component
+public class EstablecimientoRepository {
+	private static final Map<String, Establecimiento> establecimientos = new HashMap<>();
+
+	@PostConstruct
+	public void initData() {
+		Establecimiento spain = new Establecimiento();
+		spain.setName("Spain");
+		spain.setCapital("Madrid");
+		spain.setCurrency(Currency.EUR);
+		spain.setPopulation(46704314);
+
+		establecimientos.put(spain.getName(), spain);
+
+		Establecimiento poland = new Establecimiento();
+		poland.setName("Poland");
+		poland.setCapital("Warsaw");
+		poland.setCurrency(Currency.PLN);
+		poland.setPopulation(38186860);
+
+		establecimientos.put(poland.getName(), poland);
+
+		Establecimiento uk = new Establecimiento();
+		uk.setName("United Kingdom");
+		uk.setCapital("London");
+		uk.setCurrency(Currency.GBP);
+		uk.setPopulation(63705000);
+
+		establecimientos.put(uk.getName(), uk);
+	}
+
+	public Establecimiento findEstablecimiento(String nit) {
+		Assert.notNull(nit, "El NIT del establecimiento no puede ser null");
+		return establecimientos.get(nit);
+	}
+}

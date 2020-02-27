@@ -1,0 +1,29 @@
+package co.com.invima.procesos.registro.alimentos;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ws.server.endpoint.annotation.Endpoint;
+import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
+import org.springframework.ws.server.endpoint.annotation.RequestPayload;
+import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+
+
+@Endpoint
+public class InvimaEndpoint {
+	private static final String NAMESPACE_URI = "http://invima.com.co/procesos/registro/alimentos-web-service";
+
+	private EstablecimientoRepository countryRepository;
+
+	@Autowired
+	public InvimaEndpoint(EstablecimientoRepository countryRepository) {
+		this.countryRepository = countryRepository;
+	}
+
+	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "buscarEstablecimientoByNIT")
+	@ResponsePayload
+	public BuscarEstablecimientoByNITResponse getCountry(@RequestPayload GetCountryRequest request) {
+		GetCountryResponse response = new GetCountryResponse();
+		response.setCountry(countryRepository.findEstablecimiento(request.getName()));
+
+		return response;
+	}
+}

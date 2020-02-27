@@ -1,0 +1,35 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <xs:element name="buscarEstablecimientoByNIT">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="NIT" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="buscarEstablecimientoByNITResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="establecimiento" type="tns:establecimiento"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="establecimiento">
+        <xs:sequence>
+            <xs:element name="NIT" type="xs:string"/>
+            <xs:element name="razonSocial" type="xs:int"/>
+            <xs:element name="capital" type="xs:string"/>
+            <xs:element name="currency" type="tns:currency"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="tipoRevision">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="GBP"/>
+            <xs:enumeration value="EUR"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

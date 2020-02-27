@@ -1,0 +1,61 @@
+package co.com.invima.procesos.registro.alimentos;
+
+import org.springframework.stereotype.Service;
+
+import co.com.invima.procesos.registro.alimentos.integraciones_web_service.TipoRevision;
+import java.util.Random;
+
+
+
+@Service
+public class IntegracionesService {
+	
+
+	public TipoRevision getTipoRevision() {
+		return TipoRevision.NSA;
+	}
+
+	public String generarNumeroRadicado() {
+		return generarNumeroAleatorio();
+	}
+
+	public String generarNumeroExpediente() {
+		return generarNumeroAleatorio();
+	}
+	
+	private String generarNumeroAleatorio() {
+		Random rand = new Random();
+		Long num = rand.nextLong();
+		
+		return num.toString();
+	}
+
+	public String calcularTarifa(String tipoProducto) {
+		String ltipoProductoString = tipoProducto.toLowerCase();
+		if(ltipoProductoString.contains("confites") ||
+		   ltipoProductoString.contains("dulces")) {
+			
+		}
+		
+		if(ltipoProductoString.contains("bebidas")) {
+			
+		}
+		
+		if(ltipoProductoString.contains("lacteos")) {
+			
+		}
+		
+		if(ltipoProductoString.contains("pescados") ||
+		   ltipoProductoString.contains("mariscos")) {
+			
+		}
+		
+		
+		if(ltipoProductoString.contains("panes") ||
+		   ltipoProductoString.contains("trigo")) {
+			
+		}
+		
+	}
+
+}

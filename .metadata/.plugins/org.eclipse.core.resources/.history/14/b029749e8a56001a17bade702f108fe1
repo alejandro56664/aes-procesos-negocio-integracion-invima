@@ -1,0 +1,25 @@
+package co.com.invima.procesos.registro.alimentos;
+
+import javax.annotation.PostConstruct;
+import java.util.HashMap;
+import java.util.Map;
+
+import io.spring.guides.gs_producing_web_service.Establecimiento;
+import io.spring.guides.gs_producing_web_service.Currency;
+import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
+
+@Component
+public class EstablecimientoRepository {
+	private static final Map<String, Establecimiento> establecimientos = new HashMap<>();
+
+	@PostConstruct
+	public void initData() {
+
+	}
+
+	public Establecimiento findEstablecimiento(String nit) {
+		Assert.notNull(nit, "El NIT del establecimiento no puede ser null");
+		return establecimientos.get(nit);
+	}
+}

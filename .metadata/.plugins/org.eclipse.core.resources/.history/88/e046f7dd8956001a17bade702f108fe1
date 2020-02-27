@@ -1,0 +1,66 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <xs:element name="buscarEstablecimientoByNIT">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="NIT" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="buscarEstablecimientoByNITResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="establecimiento" type="tns:establecimiento"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="calcularTarifaTramite">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="param1" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="calcularTarifaTramiteResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tarifa" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+        <xs:element name="determinarTipoRevision">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="param1" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="determinarTipoRevisionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tipoRevision" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="establecimiento">
+        <xs:sequence>
+            <xs:element name="NIT" type="xs:string"/>
+            <xs:element name="razonSocial" type="xs:int"/>
+            <xs:element name="capital" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="tipoRevision">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NSA"/>
+            <xs:enumeration value="RSA"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
